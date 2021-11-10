@@ -1,6 +1,7 @@
 /* eslint-disable */
 import React, { useState } from "react";
 import "./app.css";
+import List from "./components/list";
 
 function App() {
   let [title, setTitle] = useState([
@@ -75,17 +76,14 @@ function App() {
         <p>2월 17일 발행</p>
         <hr />
       </div> */}
-      {title.map((item, idx) => {
-        return (
-          <div className="list" key={idx}>
-            <h3 onClick={() => setBtn(idx)}>{item.title}</h3>
-            <span onClick={() => handleClick(idx)}>🦔</span>
-            {item.count}
-            <p>2월 17일 발행</p>
-            <hr />
-          </div>
-        );
-      })}
+      {/* <List></List> */}
+      <List
+        title={title}
+        btn={btn}
+        setBtn={setBtn}
+        handleClick={handleClick}
+      ></List>
+
       <form>
         <div className="publish">
           <input
